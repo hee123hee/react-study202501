@@ -1,6 +1,7 @@
 import ExpenseList from "./components/expenses/ExpenseList";
 import Counter from "./components/Counter";
 import NewExpense from "./components/new-expense/NewExpense.jsx";
+import CheckBoxStyle from "./components/practice/ChechBoxStyle.jsx";
 
 
 /*
@@ -38,8 +39,13 @@ const App = () => {
     ];
 
 
+
+
+
+
     return (
         <>
+            <CheckBoxStyle />
             <NewExpense />
             <ExpenseList expenses={expenses}/>
         </>
