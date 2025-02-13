@@ -1,4 +1,5 @@
-import ExpenseList from "./components/expenses/ExpenseList.jsx";
+import ExpenseList from "./components/expenses/ExpenseList";
+import Counter from "./components/Counter";
 
 
 /*
@@ -38,6 +39,7 @@ const App = () => {
 
     return (
         <>
+            <Counter />
             <ExpenseList expenses={expenses}/>
         </>
     );
