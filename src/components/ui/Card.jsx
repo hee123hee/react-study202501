@@ -3,11 +3,10 @@ import './Card.css';
 
 const Card = ({children, className}) => {
 
+
 const cn = `card ${className}`;
-
-
     return (
-        <div className={cn}>
+        <div className={cn} >
             {/* 유동적인 구조인 경우 */}
             {children}
 

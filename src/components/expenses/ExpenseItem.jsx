@@ -25,7 +25,8 @@ const ExpenseItem = ({expense}) => {
             </div>
 
             <button id='btn1'
-                    onClick={handleClick}>버튼1
+                    onClick={handleClick}>
+                    버튼1
             </button>
             <button id='btn2'
                     onMouseLeave={e => alert('나가기!')}
