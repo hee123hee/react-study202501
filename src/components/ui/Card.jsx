@@ -3,7 +3,6 @@ import './Card.css';
 
 const Card = ({children, className}) => {
 
-
 const cn = `card ${className}`;
     return (
         <div className={cn} >
