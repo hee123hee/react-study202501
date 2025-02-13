@@ -15,7 +15,7 @@ const ExpenseItem = ({expense}) => {
     const {title, price, date} = expense;
 
     const [itemTitle, setItemTitle] = useState(title);
-    console.log('itemTitle:', itemTitle);
+    // console.log('itemTitle:', itemTitle);
 
 
     // 원화 표기법으로 변환
