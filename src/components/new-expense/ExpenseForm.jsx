@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import './ExpenseForm.css';
 
-const ExpenseForm = () => {
+const ExpenseForm = ({onAdd}) => {
+
     const initialUserInput = {
         title: '',
         price: 0,
@@ -17,6 +18,9 @@ const ExpenseForm = () => {
     const handleSubmit = e => {
         e.preventDefault();
         console.log('userInput: ', userInput);
+
+        //부모가 보낸 데이터전달용 함수를 호출
+        onAdd(userInput);
 
         // 입력창 비우기
         setUserInput(initialUserInput);
