@@ -41,7 +41,6 @@ const App = () => {
 
     return (
         <>
-            <CheckBoxStyle />
             <NewExpense />
             <ExpenseList expenses={expenses}/>
         </>
