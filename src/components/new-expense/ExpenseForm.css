@@ -23,3 +23,8 @@
 
     text-align: right;
 }
+
+.new-expense .cancel-btn{
+    background-color: red;
+    border: none;
+}
