@@ -1,22 +1,45 @@
+
 import React from 'react';
 import ChartBar from './ChartBar';
 import './Chart.css';
-const Chart = () => {
+
+const Chart = ({ dataPoints }) => {
+    /*
+      dataPoints배열에는 각 월별 지출총액이 집계되어있는 상태
+      여기서 월별 비율을 구해야하는가? X -> 연도 지출총액 + 해당월 지출액만 전송
+      각 ChartBar가 자신의 월에 해당하는 비율을 구하도록 함
+    */
+    // function calcTotal() {
+    //   let total = 0;
+    //   for (const dp of dataPoints) {
+    //     total += dp.value;
+    //   }
+    //   return total;
+    // }
+    function calcTotal() {
+        let total =0;
+        for (const dp of dataPoints) {
+            total + dp.value;
+        }
+        return total;
+    }
+
+    const totalVal = calcTotal();
+
+
+
     return (
         <div className='chart'>
-            <ChartBar />
-            <ChartBar />
-            <ChartBar />
-            <ChartBar />
-            <ChartBar />
-            <ChartBar />
-            <ChartBar />
-            <ChartBar />
-            <ChartBar />
-            <ChartBar />
-            <ChartBar />
-            <ChartBar />
+            {dataPoints.map((dp) => (
+                <ChartBar
+                    key={dp.label}
+                    label={dp.label}
+                    currentMonthValue={dp.value}
+                    totalValue={calcTotal()}
+                />
+            ))}
         </div>
     );
 };
+
 export default Chart;
