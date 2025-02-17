@@ -20,10 +20,6 @@ import ExpenseFilter from "./components/expenses/ExpenseFilter.jsx";
 
 const App = () => {
 
-
-
-
-
     // 서버에서 지출항목 JSON이 응답됨
     const expenses = [
         {
@@ -49,7 +45,6 @@ const App = () => {
         console.log('상향식 데이터 전달용 함수 호출! : ');
         // console.log(newUserData);
         expenses.push(newUserData);
-
         console.log(expenses);
 
     };

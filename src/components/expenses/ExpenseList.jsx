@@ -1,9 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ExpenseItem from "./ExpenseItem";
 import './ExpenseList.css'
 import ExpenseFilter from "./ExpenseFilter.jsx";
 
 const ExpenseList = ({expenses}) => {
+
+    const [year, setYear] = useState(new Date().getFullYear().toString());
 
     console.log('필터 연도값을 출력');
 
