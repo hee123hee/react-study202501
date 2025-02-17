@@ -1,4 +1,5 @@
 import ExpenseList from "./components/expenses/ExpenseList";
+import react, {useState} from "react";
 import Counter from "./components/Counter";
 import NewExpense from "./components/new-expense/NewExpense.jsx";
 import CheckBoxStyle from "./components/practice/ChechBoxStyle.jsx";
@@ -39,20 +40,24 @@ const App = () => {
         },
     ];
 
+    //지출항목 배열을 상태변수로 관리
+    const [expenseList, setExpenseList] = useState(expenses);
+
     //상향식 데이터 전달을 위해 하위컴포넌트에게 함수 하나를 내려줘야 함.
     // 리액트 에서는 on, handle이 붙으면 '아~~함수구나!' 생각함
     const onAddExpense = (newUserData) => {
         console.log('상향식 데이터 전달용 함수 호출! : ');
-        // console.log(newUserData);
-        expenses.push(newUserData);
-        console.log(expenses);
 
+        // console.log(newUserData);
+        // expenses.push(newUserData);
+        setExpenseList([...expenseList, newUserData]);
     };
 
     return (
         <>
             <NewExpense onSave={onAddExpense} />
-            <ExpenseList expenses={expenses} />
+            <ExpenseList expenses={expenseList} />
+
         </>
     );
 }
