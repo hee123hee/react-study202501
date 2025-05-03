@@ -18,7 +18,11 @@ const App = () => {
     // return $h1;
     return (
         <>
-            <ExpenseItem/>
+            <ExpenseItem title={'닭강정'}
+                         price={8000}
+                         date={new Date(2025, 1, 3)}/>
+            <ExpenseItem title={'아이슈크림'} price={5000} date={new Date(2025, 2, 14)}/>
+            <ExpenseItem title={'꿈틀이젤리'} price={1000} date={new Date(2025, 5, 4)}/>
         </>
     )
 }

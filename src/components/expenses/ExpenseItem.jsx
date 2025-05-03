@@ -1,12 +1,17 @@
 import './ExpenseItem.css';
 
-const ExpenseItem = () => {
+const ExpenseItem = ({title, price, date}) => {
+
+    // console.log('props', props);
+
+
+
     return (
         <div className='expense-item'>
-            <div>2025-02-03</div>
+            <div>{date.toLocaleString()}</div>
             <div className='expense-item__description'>
-                <h2>점심밥</h2>
-                <div className='expense-item__price'>10000원</div>
+                <h2>{title}</h2>
+                <div className='expense-item__price'>{price}원</div>
             </div>
         </div>
     );
