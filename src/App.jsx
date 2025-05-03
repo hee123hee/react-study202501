@@ -1,3 +1,6 @@
+import Hello from './components/Hello'
+import Bye from "./components/Bye.jsx";
+
 /*
       jsx: 리액트에서 사용하는 특수한 js문법, 태그를 그대로 쓰면 알아서 변환
 
@@ -11,22 +14,14 @@
 
 function App() {
     // const $h1 = React.createElement('h1', null, '안녕 리액트');
-    const subject = 'Vanilla Javascript!! ';
-
 
     // 렌더링 수행
     // return $h1;
     return (
         <>
-            <header>
-                <h1 className="title">안녕 {subject}</h1>
-                <p>리액트 학습 시작!</p>
-                <label htmlFor="">이름</label>
-                <input type="text" id="username"/>
-            </header>
-            <main>
-                메인 컨텐츠~!
-            </main>
+            <Bye />
+            <Hello/>
+            <Bye />
         </>
     )
 }
