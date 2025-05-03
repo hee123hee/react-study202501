@@ -1,4 +1,4 @@
-import ExpenseItem from "./components/expenses/ExpenseItem";
+import ExpenseList from "./components/expenses/ExpenseList.jsx";
 
 /*
       jsx: 리액트에서 사용하는 특수한 js문법, 태그를 그대로 쓰면 알아서 변환
@@ -14,15 +14,29 @@ import ExpenseItem from "./components/expenses/ExpenseItem";
 const App = () => {
     // const $h1 = React.createElement('h1', null, '안녕 리액트');
 
-    // 렌더링 수행
-    // return $h1;
+    // 서버에서 지출항목 JSON이 응답됨
+    const expenses = [
+        {
+            title: '치킨',
+            price: 15000,
+            date: new Date(2025, 2, -1, 30)
+        },
+        {
+            title: '족발',
+            price: 25300,
+            date: new Date(2024, 9, -14, 30)
+        },
+        {
+            title: '헬스장등록',
+            price: 70000,
+            date: new Date(2025, 2, -15, 15)
+        },
+    ]
+
+
     return (
         <>
-            <ExpenseItem title={'닭강정'}
-                         price={8000}
-                         date={new Date(2025, 1, 3)}/>
-            <ExpenseItem title={'아이슈크림'} price={5000} date={new Date(2025, 2, 14)}/>
-            <ExpenseItem title={'꿈틀이젤리'} price={1000} date={new Date(2025, 5, 4)}/>
+            <ExpenseList expenses={expenses}/>
         </>
     )
 }
