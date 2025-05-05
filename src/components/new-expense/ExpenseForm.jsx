@@ -1,12 +1,21 @@
-
 import React, {useState} from 'react';
 import './ExpenseForm.css';
 
 const ExpenseForm = () => {
-    // 상태값 관리
-const [title, setTitle] = useState('')
-const [price, setPrice] = useState(0)
-const [date , setDate] = useState(null)
+    // 단일 상태값 관리
+// const [title, setTitle] = useState('')
+// const [price, setPrice] = useState(0)
+// const [date , setDate] = useState(null)
+
+    const initialUserInput =
+        {
+            title: '',
+            price: 0,
+            date: '',
+        }
+
+    // 객체 상태값 관리
+    const [userInput, setUserInput] = useState(initialUserInput)
 
     // 오늘 날짜를 YYYY-MM-DD 형식으로 가져오는 함수
     const getTodayDate = () => {
@@ -21,13 +30,39 @@ const [date , setDate] = useState(null)
         e.preventDefault();
         // console.log('submit !!')
 
-        const payload = {
-            title,
-            price,
-            date
-        }
-        console.log('payload', payload)
+        // const payload = {
+        //     title,
+        //     price,
+        //     date
+        // }
+        console.log('payload', userInput)
 
+        //     입력창 비우기 - 상태값과 input을 연결하려면 양방향으로 연결해야함
+        //     input 태그에 입력하면 상태값 userInput만 변경됨 - 단방향
+        //     userInput을 변경하면 input 태그도 변경됨 - 양방향
+        setUserInput(initialUserInput)
+
+    }
+
+    const handleTitleInput = e => {
+        // 리액트는 상태값 변경은 반드시  setter를 통해서 수행
+        // 상태값 객체나 배열일 경우에는 항상 새로운 객체, 배열을 세팅하라
+        setUserInput({
+            ...userInput,
+            title: e.target.value,
+        })
+    }
+    const handlePriceInput = e => {
+        setUserInput({
+            ...userInput,
+            price: +e.target.value,
+        })
+    }
+    const handleDateInput = e => {
+        setUserInput({
+            ...userInput,
+            date: e.target.value,
+        })
     }
 
     return (
@@ -35,7 +70,7 @@ const [date , setDate] = useState(null)
             <div className='new-expense__controls'>
                 <div className='new-expense__control'>
                     <label>Title</label>
-                    <input type='text' onChange={e=>setTitle(e.target.value)}/>
+                    <input type='text' onChange={handleTitleInput} value={userInput.title}/>
                 </div>
                 <div className='new-expense__control'>
                     <label>Price</label>
@@ -43,7 +78,8 @@ const [date , setDate] = useState(null)
                         type='number'
                         min='100'
                         step='100'
-                        onInput={e=>setPrice(+e.target.value)}
+                        onInput={handlePriceInput}
+                        value={userInput.price}
                     />
                 </div>
                 <div className='new-expense__control'>
@@ -52,7 +88,8 @@ const [date , setDate] = useState(null)
                         type='date'
                         min='2019-01-01'
                         max={getTodayDate()}
-                        onInput={e=>setDate(e.target.value)}
+                        onInput={handleDateInput}
+                        value={userInput.date}
                     />
                 </div>
             </div>
