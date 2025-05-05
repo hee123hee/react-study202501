@@ -1,4 +1,5 @@
 import ExpenseList from "./components/expenses/ExpenseList.jsx";
+import Counter from "./components/Counter.jsx";
 
 /*
       jsx: 리액트에서 사용하는 특수한 js문법, 태그를 그대로 쓰면 알아서 변환
@@ -36,6 +37,8 @@ const App = () => {
 
     return (
         <>
+            <Counter />
+            <Counter />
             <ExpenseList expenses={expenses}/>
         </>
     )

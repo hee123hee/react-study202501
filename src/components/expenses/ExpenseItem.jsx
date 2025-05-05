@@ -13,7 +13,7 @@ const ExpenseItem = ({expense}) => {
         두번째 요소는 해당 상태값을 변경할 때 사용하는 setter 함수
      */
     let [itemTitle, setItemTitle] = useState(title);
-    console.log('itemTitle', itemTitle);
+    // console.log('itemTitle', itemTitle);
 
     // console.log('props', props);
 
