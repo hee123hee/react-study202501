@@ -1,5 +1,6 @@
 import ExpenseList from "./components/expenses/ExpenseList.jsx";
 import NewExpense from "./components/new-expense/NewExpense.jsx";
+import CheckBoxStyle from "./components/practice/CheckBoxStyle.jsx";
 
 /*
       jsx: 리액트에서 사용하는 특수한 js문법, 태그를 그대로 쓰면 알아서 변환
@@ -37,6 +38,7 @@ const App = () => {
 
     return (
         <>
+            <CheckBoxStyle />
             <NewExpense />
             <ExpenseList expenses={expenses}/>
         </>
