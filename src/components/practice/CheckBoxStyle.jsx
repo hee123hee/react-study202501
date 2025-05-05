@@ -8,10 +8,11 @@ function CheckBoxStyle() {
     2. check 상태가 바뀔 때마다 상태변수를 논리값으로 없데이트하여
     3. label의 클래스를 유동적으로 변경해야 함.
  */
-    const [checkbox , setCheckbox] = useState()
+    const [checked , setChecked] = useState(false);
 
-    const handleCheckbox = () => {
-        setCheckbox(checkbox[type]='unchecked')
+    const handleCheckbox = (e) => {
+        // console.log('checked me !! ')
+        setChecked(!checked)
     }
 
     return (
@@ -21,7 +22,7 @@ function CheckBoxStyle() {
                 id='styled-checkbox'
                 onChange={handleCheckbox}
             />
-            <label className='unchecked' htmlFor='styled-checkbox'>Check me!</label>
+            <label className={checked ? 'checked': 'unchecked'} htmlFor='styled-checkbox'>Check me!</label>
         </div>
     );
 }
