@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './ExpenseForm.css';
 
-const ExpenseForm = () => {
+const ExpenseForm = ({onAdd}) => {
     // 단일 상태값 관리
 // const [title, setTitle] = useState('')
 // const [price, setPrice] = useState(0)
@@ -36,6 +36,9 @@ const ExpenseForm = () => {
         //     date
         // }
         console.log('payload', userInput)
+
+        // 부모가 보낸 데이터 전달용함수를 호출
+        onAdd(userInput);
 
         //     입력창 비우기 - 상태값과 input을 연결하려면 양방향으로 연결해야함
         //     input 태그에 입력하면 상태값 userInput만 변경됨 - 단방향
