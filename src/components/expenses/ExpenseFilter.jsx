@@ -1,10 +1,10 @@
 import React from 'react';
 import './ExpenseFilter.css';
 
-const ExpenseFilter = (props) => {
+const ExpenseFilter = ({onChangeFilter}) => {
 
     const changeYearHandler = e => {
-        props.onChangeFilter(e.target.value);
+        onChangeFilter(e.target.value);
     };
 
     const yearArr = [2019, 2020, 2021, 2022, 2023, 2024, 2025]
@@ -16,7 +16,7 @@ const ExpenseFilter = (props) => {
                 <select onChange={changeYearHandler}>
                     {
                         yearArr
-                            .sort((a,b)=>b-a)
+                            .sort((a,b) => b-a)
                             .map(year => <option key={year} value={year}>{year}</option>)
                     }
                 </select>
